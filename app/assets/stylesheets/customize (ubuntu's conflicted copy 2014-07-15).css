@@ -1,0 +1,172 @@
+/* Author: DangNH*/
+#edit_all_user_wrapper .row .col-md-6, #edit_user_in_department_wrapper .col-md-6 {
+	width: 100%;
+}
+
+table tbody td {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	max-width: 400px;
+}
+/* Customize Header Datatable */
+.ui-state-default {
+	cursor: pointer;
+}
+
+a {
+	cursor: pointer;
+}
+
+/* Remove padding for search textbox datatable */
+.col-md-12.form-horizontal .dataTables_filter.form-group.margin-none .col-md-5 {
+	padding-right: 0px;
+}
+/*Some customize for screen */
+input[type='checkbox'], input[type='radio'] {  
+  width: 17px;
+  height: 20px;
+  padding: 0 5px 0 0;
+  display: block;
+  clear: left;
+  float: left;
+
+  padding-left: 22px;
+  display: inline-block;
+  line-height: 17px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  font-size: 15px;
+  vertical-align: middle;
+  cursor: pointer;
+} 
+.error {
+	color: red;
+}
+
+/* Resize for login page */
+#login .container {
+	margin-left: 35%;
+	margin-right: 35%;
+	width: 30%;
+}
+
+#login .wrapper {
+	width: 100%;
+}
+
+/* Resize for forgot password page */
+#forgot .container, #reset .container {
+	margin-left: 30%;
+	margin-right: 30%;
+	width: 40%;
+}
+
+#forgot .wrapper{
+	width: 100%;
+}
+/* Fix width for drop down table */
+#content .dropdown-menu.pull-left.fix_width {
+	width: 235px;
+}
+/* Make the max width of text in table cell*/
+table.display td {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	max-width: 400px;
+}
+
+/* Set Cursor for button add on*/
+.input-group-addon {
+	cursor: pointer;
+}
+
+/*Align top for bootbox confirm*/
+.bootbox.modal {
+	top: 40%;
+}
+
+/* Disable scroll in modal pop-up*/
+.modal {
+	overflow-y: hidden;
+}
+
+/* Resize Modal*/
+#edit_member_list {
+	width: 80%;
+}
+
+#edit_user_group_modal, #new_user_group_modal, #edit_realtionship, #select_team_leader, #select_template, #select_manager	 {
+	width: 50%;
+}
+
+#new_user_modal, #edit_user_modal, #new_user_relationship_modal, #new_term_modal, #edit_term_modal, #notification_modal {
+	width: 40%;
+}
+
+ /* End */
+
+/* Align right for groups of button in Index page*/
+.button_group_right {
+	text-align: right;
+  float: right;
+  margin-bottom: 1%
+}
+
+/* Customize for "Create Relationship Pop-up*/
+#new_user_relationship_modal .col-sm-9 {
+	padding-right: 0px;
+}
+
+#new_user_relationship_modal #select_manager {
+	border-radius: 0px;
+}
+
+#new_user_relationship_modal input[type="text"] {
+  background-color: white;
+}
+/* End
+
+/* Customize for "Create/ Edit Term Pop-up*/
+#new_term_modal input[type='text'] {
+	background-color: white;
+}
+
+#edit_term_modal input[type='text'] {
+	background-color: white;
+}
+/* End */
+
+/* Customize for "Create/ Edit Department Pop-up*/
+#departments_general input[type="text"] {
+  background-color: white;
+}
+
+/* Hanlde when have a lot of permission in Create Role Pop up*/
+.modal-body {
+	max-height: 550px;
+	overflow-y: auto;
+}
+
+#new_user_group_modal .modal-body, #edit_user_group_modal .modal-body {
+	max-height: 700px;
+	overflow-y: auto;
+}
+ /*End */
+
+/* Align 'Forgot Password' link */
+#login .right_align {
+	text-align: right;
+	float: right;
+}
+
+body.forgot, body.reset {
+	background: #f0f0f0;
+}
+
+#reset .progress {
+	margin-top: 3%;
+}

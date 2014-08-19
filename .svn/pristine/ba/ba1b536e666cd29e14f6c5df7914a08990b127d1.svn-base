@@ -1,0 +1,81 @@
+/* Author: DangNH*/
+
+/* Fix width for drop down table */
+#content .dropdown-menu.pull-left.fix_width {
+	width: 235px;
+}
+/* Make the max width of text in table cell*/
+table.display td {
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+-o-text-overflow: ellipsis;
+max-width: 400px;
+}
+
+/* Set Cursor for button add on*/
+.input-group-addon {
+	cursor: pointer;
+}
+
+/*Align top for bootbox confirm*/
+.bootbox.modal {
+	top: 40%;
+}
+
+/* Disable scroll in modal pop-up*/
+.modal {
+	overflow-y: hidden;
+}
+
+/* Resize Modal*/
+#edit_member_list {
+	width: 65%;
+}
+
+#new_user_group_modal, #edit_realtionship, #select_team_leader, #select_template, #select_manager	 {
+	width: 50%;
+}
+
+#new_user_modal, #edit_user_modal, #new_user_relationship_modal, #new_term_modal, #edit_term_modal {
+	width: 40%;
+}
+
+ /* End */
+
+/* Align right for groups of button in Index page*/
+.button_group_right {
+	text-align: right;
+  float: right;
+  margin-bottom: 1%
+}
+
+/* Customize for "Create Relationship Pop-up*/
+#new_user_relationship_modal .col-sm-9 {
+	padding-right: 0px;
+}
+
+#new_user_relationship_modal #select_manager {
+	border-radius: 0px;
+}
+
+#new_user_relationship_modal input[type="text"] {
+  background-color: white;
+}
+/* End
+
+/* Customize for "Create/ Edit Term Pop-up*/
+#new_term_modal input[type='text'] {
+	background-color: white;
+}
+
+#edit_term_modal input[type='text'] {
+	background-color: white;
+}
+/* End */
+
+/* Customize for "Create/ Edit Department Pop-up*/
+#departments_general input[type="text"] {
+  background-color: white;
+}
+ /*End */

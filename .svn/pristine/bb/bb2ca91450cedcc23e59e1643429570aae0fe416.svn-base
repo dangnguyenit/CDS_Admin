@@ -1,0 +1,1007 @@
+function deleteUser(url, id){
+  var message = I18n.t('confirm_delete_username');
+  var confirm = showConfirm(message, "");
+  if(confirm){
+    $.ajax({
+      url: url + "/" + id,
+      type: 'DELETE',
+      data: {
+        id: id,
+        authenticity_token: g_token
+      }
+
+    }).done(function(){
+      //
+      window.location = g_usersPath;
+    });
+  }
+
+}
+
+function showConfirm(message,user_name){
+  if(confirm(message + user_name + "?", I18n.t('confirm'))){
+    return true;
+  }
+  return false;
+}
+
+function resetPassword(url, email, user_name, token){
+  var message = "#{t:(confirm_reset_password)}";
+  var confirm = showConfirm(message, $('<div/>').html(user_name).text());
+  if(confirm){
+    $.ajax({
+      url: url,
+      type: 'POST',
+      data: {
+        "user[email]": email,
+        authenticity_token: token
+      }
+
+    }).done(function(){
+      //
+      alert("#{t(:reset_password_successful)}");
+    });
+  }
+}
+$.validator.addMethod("regex", function(value, element, regexp) {
+        return this.optional(element) || regexp.test(value);
+    }, "");
+$(function(){
+  // $("#new_user").validate({
+  //   rules:{
+  //     "user[password]": {
+  //       minlength: 6,
+  //       maxlength: 50
+  //     },
+  //     "user[username]":{
+  //     	minlength: 3,
+  //       maxlength: 50,
+  //       regex: /^[A-Za-z0-9\.]+$/,
+  //       required: true
+  //     },
+  //     "user[first_name]": {
+  //       required: true,
+  //       minlength: 2,
+  //       maxlength: 50
+  //     },
+  //     "user[last_name]": {
+  //       required: true,
+  //       minlength: 2,
+  //       maxlength: 50
+  //     },
+  //     "user[password]": {
+  //       required: true,
+  //       minlength: 6,
+  //       maxlength: 32
+  //     },
+  //     "user[email]": {
+  //       required: true,
+  //       email: true
+  //     },
+  //     "user[password_confirmation]": {
+  //       equalTo: "#user_password"
+  //     },
+  //     "recaptcha_response_field": {
+  //       required: true
+  //     },
+  //     "organization[name]":{
+  //       minlength: 3,
+  //       maxlength: 50,
+  //       regex: /^[A-Za-z0-9\.]+$/,
+  //       required: true
+  //     },
+  //     "organization[description]": {
+  //       required: true,
+  //       minlength: 2,
+  //       maxlength: 50
+  //     }
+  //   },
+  //   messages: {
+  //     "user[first_name]":{
+  //       required: I18n.t('required_msg', {field : I18n.t('firstname')}),
+  //       maxlength: I18n.t('maxlength_msg', {field : I18n.t('firstname'), length: 50})
+  //     },
+  //     "user[email]":{
+  //       required: I18n.t('required_msg', {field : I18n.t('email')}),
+  //     },
+  //     "user[last_name]":{
+  //       required: I18n.t('required_msg', {field : I18n.t('lastname')}),
+  //       maxlength: I18n.t('maxlength_msg', {field : I18n.t('lastname'), length: 50})
+  //     },
+  //     "user[username]": {
+  //       required: I18n.t('required_msg', {field : I18n.t('username')}),
+  //       regex: I18n.t('regex_username', {field : I18n.t('username')}),
+  //       minlength: I18n.t('minlength_msg',{field : I18n.t('lastname'), length: 3}),
+  //       maxlength: I18n.t('maxlength_msg', {field : I18n.t('username'), length: 50})
+  //     },
+  //     "user[password]":{
+  //       required: I18n.t('required_msg', {field : I18n.t('password')}),
+  //       minlength: I18n.t('minlength_msg', {field : I18n.t('password'), length: 6}),
+  //       maxlength: I18n.t('maxlength_msg', {field : I18n.t('password'), length: 32})
+  //     },
+  //     "user[password_confirmation]": {
+  //       equalTo: I18n.t('password_not_match')
+  //     },
+  //     "recaptcha_response_field": {
+  //       required: I18n.t('required_msg', {field : I18n.t('captcha')}),
+  //     },
+  //     "organization[name]":{
+  //       required: I18n.t('organization.name_required'),
+  //       regex: I18n.t('regex_orgname', {field : I18n.t('organization.name')}),
+  //       minlength: I18n.t('minlength_msg', {field : I18n.t('organization.name'), length: 6}),
+  //       maxlength: I18n.t('maxlength_msg', {field : I18n.t('organization.name'), length: 32})
+  //     },
+  //     "organization[description]":{
+  //       required: I18n.t('organization.description_require'),
+  //       minlength: I18n.t('minlength_msg', {field : I18n.t('organization.description'), length: 6}),
+  //       maxlength: I18n.t('maxlength_msg', {field : I18n.t('organization.description'), length: 32})
+  //     }
+  //   },
+  //   errorPlacement: function(error, element){
+  //     error.appendTo(element.parent());
+
+  //   }
+  // });
+
+// $("#edit_user").validate({
+//     rules:{
+//       "user[password]": {
+//         minlength: 6,
+//         maxlength: 50
+//       },
+//       "user[first_name]": {
+//         required: true,
+//         minlength: 2,
+//         maxlength: 50
+//       },
+//       "user[last_name]": {
+//         required: true,
+//         minlength: 2,
+//         maxlength: 50
+//       },
+//       "user[password_confirmation]": {
+//         equalTo: "#user_password"
+//       },
+//       "user[email]": {
+//         required: true,
+//         email: true
+//       },
+//       "user[username]":{
+//       	minlength: 3,
+//       	regex: /^[A-Za-z0-9\.]+$/,
+//         required: true,
+//         maxlength: 32
+//       }
+//     },
+//     messages: {
+//       "user[first_name]":{
+//         required: I18n.t('required_msg', {field : I18n.t('firstname')}),
+//         maxlength: I18n.t('maxlength_msg', {field : I18n.t('firstname'), length: 50})
+//       },
+//       "user[email]":{
+//         required: I18n.t('required_msg', {field : I18n.t('email')}),
+//       },
+//       "user[last_name]":{
+//         required: I18n.t('required_msg', {field : I18n.t('lastname')}),
+//         maxlength: I18n.t('maxlength_msg', {field : I18n.t('lastname'), length: 50})
+//       },
+//       "user[username]": {
+//         required: I18n.t('required_msg', {field : I18n.t('username')}),
+//         regex: I18n.t('regex_username', {field : I18n.t('username')}),
+//         maxlength: I18n.t('maxlength_msg', {field : I18n.t('username'), length: 50})
+//       },
+//       "user[password]":{
+//         required: I18n.t('required_msg', {field : I18n.t('password')}),
+//         maxlength: I18n.t('password_length'),
+//         minlength: I18n.t('password_length')
+//       },
+//       "user[password_confirmation]": {
+//         equalTo: I18n.t('password_not_match')
+//       }
+//     },
+//     errorPlacement: function(error, element){
+//       error.appendTo(element.parent());
+//     }
+//   });
+});
+
+  function renderStatus(obj){
+    if(obj.aData[3]){
+      return "Disabled";
+    }
+    else {
+      return "Enabled";
+    }
+  }
+  function renderAction(obj){
+  	if(g_bDeletePermission){
+      return '<a onClick="deleteUser(g_usersPath,' + obj.aData[5] +');">Delete</a>';
+     }
+    else{
+      return "";
+     }
+  }
+  function editUser(obj){
+  	if(g_bEditPermission){
+      return "<a href="+g_editUserPath.replace("%5Bid%5D",obj.aData[5])+">"+obj.aData[1]+"</a>";
+   	}
+   	else{
+   	  return obj.aData[1];
+   	}
+   }
+
+var tb_all
+var new_user
+var edit_user
+var notify_create
+var notify_update
+var notify_delete
+//Set style table
+$(document).ready(function(){
+
+  var tb = $("#user_table").dataTable({
+    "sDom": "<'row separator bottom'<'col-md-12'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
+    "bJQueryUI":true,
+    "bFilter": true,
+    "bLengthChange": false,
+    "bInfo": false,
+    "bProcessing": false,
+    "bServerSide": true,
+    "sPaginationType": "bootstrap",
+    "iDisplayLength": g_displayLength,
+    "aaSorting": [[ 1, "asc" ]],
+    "aoColumns": [
+      { "sTitle": I18n.t('user_management.j_user_no'),
+        'bSortable': false,
+        "sClass": "center",
+        "sWidth": "10%"
+      },
+      { "sTitle": I18n.t('user_management.j_full_name'),
+        "fnRender": editUser,
+        "sWidth": "35%"
+      },
+      { "sTitle": I18n.t('user_management.j_user_name'),
+        "sWidth": "35%"
+      },
+      { "sTitle": I18n.t('user_management.j_status'),
+        'bSortable': false,
+        "fnRender": renderStatus,
+        "sClass": "center",
+        "sWidth": "10%"
+       },
+      { "sTitle": I18n.t('user_management.j_action'),
+        'bSortable': false,
+        "fnRender": renderAction,
+        "sClass": "center",
+        "sWidth": "10%"
+      },
+      {  "bVisible": false }
+    ],
+    "sAjaxSource": "#{users_path}",
+    "fnInitComplete": function () {
+      CDS.fnInitCompleteCallback(this);
+      $('div.dataTables_filter input').focus();
+    }
+  });
+
+ 
+  /**
+  * Initialize datatable content list of user
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  tb_all = $("#user_table_show_all").dataTable({
+    "sDom": "<'row separator bottom'<'col-md-12'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
+    "bJQueryUI":true,
+    "bFilter": true,
+    "bLengthChange": false,
+    "bInfo": false,
+    "bProcessing": true,
+    "bServerSide": true,
+    "sPaginationType": "bootstrap",
+    "iDisplayLength": g_displayLength,
+    "aaSorting": [[ 1, "asc" ]],
+    "aoColumns": [
+      { "sTitle": "<input type='checkbox' class='user_checkbox' id='select_all_user' onclick='Users.check_all_checkbox()' >",
+        "sClass": "center",
+        "sWidth": "1%",
+        "bSortable": false,
+        "mData" : Users.renderCheckbox_all
+      },
+      { "sTitle": "Full Name",
+        "mData" : "full_name"
+      },
+      { "sTitle": "Abbreviation",
+        "mData" : "abbreviation"
+      },
+      { "sTitle": "Email Address",
+        "mData" : "email"
+      },
+      { "sTitle": "Employee ID",
+        "mData" : "emp_id"
+      },
+      { "sTitle": "Role",
+        "mData" : "role"
+      },
+      { "sTitle": "Date Created",
+        "mData" : "date_created",
+      },
+      { "sTitle": "Status",
+        "mData" : "status",
+      },
+      { "sTitle": "Action",
+        "bSortable": false,
+        "sWidth": "10%",
+        "mData" : Users.renderAction_all,
+      },
+    ],
+    "sAjaxSource": "#{users_path}",
+    "fnInitComplete": function () {
+      CDS.fnInitCompleteCallback(this);
+      $('div.dataTables_filter input').focus();
+      
+    },
+    "fnDrawCallback": function() {
+      $('div.dataTables_filter input').focus();
+      // Handle when check to the checkboxs
+      var checkboxes = $("[name='list_users[user_id][]']")
+      checkboxes.click(function() {
+        if (checkboxes.is(":checked") == true) {
+          // reset_btn.style.display = 'inline'
+          // reactive_all.style.display = 'inline'
+          delete_all.disabled = false
+          $("#select_all_user")[0].checked = false
+        }
+        else {
+          // reset_btn.style.display = 'none'
+          // reactive_all.style.display = 'none'
+          delete_all.disabled = true
+          $("#select_all_user")[0].checked = false
+        }
+      });
+      $("#select_all_user").click(function() {
+        if (checkboxes.is(":checked") == true) {
+          // reset_btn.style.display = 'inline'
+          // reactive_all.style.display = 'inline'
+          delete_all.disabled = false
+        }
+        else {
+          // reset_btn.style.display = 'none'
+          // reactive_all.style.display = 'none'
+          delete_all.disabled = true
+        }
+      })
+    }
+  });
+
+  $(function(){
+    new_user = $("#new_user_pop_up").validate({
+      rules: {
+        full_name: {
+          required: true,
+          minlength: 3,
+          maxlength: 50
+        },
+        abbreviation: {
+          required: true,
+          minlength: 3,
+          maxlength: 10
+        },
+        email_address: {
+          required: true,
+          email: true,
+          minlength: 3,
+          maxlength: 50
+        },
+        employee_id: {
+          required: true,
+          number: true
+        }
+      },
+      messages: {
+        full_name: {
+          required: I18n.t('required_msg', {field : I18n.t('user_management.j_full_name')}),
+          minlength: I18n.t('minlength_msg', {field : I18n.t('user_management.j_full_name'), length: 3}),
+          maxlength: I18n.t('maxlength_msg', {field : I18n.t('user_management.j_full_name'), length: 50}),
+        },
+        abbreviation: {
+          required: I18n.t('required_msg', {field : I18n.t('user_management.j_abbreviation')}),
+          minlength: I18n.t('minlength_msg', {field : I18n.t('user_management.j_abbreviation'), length: 3}),
+          maxlength: I18n.t('maxlength_msg', {field : I18n.t('user_management.j_abbreviation'), length: 10}),
+        },
+        email_address: {
+          required: I18n.t('required_msg', {field : I18n.t('user_management.j_email')}),
+          email: I18n.t('email_msg', {field : I18n.t('user_management.j_email')}),
+          minlength: I18n.t('minlength_msg', {field : I18n.t('user_management.j_email'), length: 3}),
+          maxlength: I18n.t('maxlength_msg', {field : I18n.t('user_management.j_email'), length: 50}),
+        },
+        employee_id: {
+          required: I18n.t('required_msg', {field : I18n.t('user_management.j_emp_no')}),
+          number: I18n.t('require_digits')
+        }
+      },
+      submitHandler: function(form) {  
+        Users.create_new_user(g_token)
+      },
+      errorPlacement: function(error, element){
+        error.appendTo(element.parent());
+      }    
+    });
+
+    edit_user = $("#edit_user_pop_up").validate({
+      rules: {
+        full_name: {
+          required: true,
+          minlength: 3,
+          maxlength: 50
+        },
+        abbreviation: {
+          required: true,
+          minlength: 3,
+          maxlength: 10
+        },
+        email_address: {
+          required: true,
+          email: true,
+          minlength: 3,
+          maxlength: 50
+        },
+        employee_id: {
+          required: true,
+          number: true
+        }
+      },
+      messages: {
+        full_name: {
+          required: I18n.t('required_msg', {field : I18n.t('user_management.j_full_name')}),
+          minlength: I18n.t('minlength_msg', {field : I18n.t('user_management.j_full_name'), length: 3}),
+          maxlength: I18n.t('maxlength_msg', {field : I18n.t('user_management.j_full_name'), length: 50}),
+        },
+        abbreviation: {
+          required: I18n.t('required_msg', {field : I18n.t('user_management.j_abbreviation')}),
+          minlength: I18n.t('minlength_msg', {field : I18n.t('user_management.j_abbreviation'), length: 3}),
+          maxlength: I18n.t('maxlength_msg', {field : I18n.t('user_management.j_abbreviation'), length: 10}),
+        },
+        email_address: {
+          required: I18n.t('required_msg', {field : I18n.t('user_management.j_email')}),
+          email: I18n.t('email_msg', {field : I18n.t('user_management.j_email')}),
+          minlength: I18n.t('minlength_msg', {field : I18n.t('user_management.j_email'), length: 3}),
+          maxlength: I18n.t('maxlength_msg', {field : I18n.t('user_management.j_email'), length: 50}),
+        },
+        employee_id: {
+          required: I18n.t('required_msg', {field : I18n.t('user_management.j_emp_no')}),
+          number: I18n.t('require_digits')
+        }
+      },
+      submitHandler: function() {
+        Users.edit_user(g_token)
+      },
+      errorPlacement: function(error, element){
+        error.appendTo(element.parent());
+      }
+    });
+  });
+
+
+  // Hide 3 button Reset Password, Reactive, Delete  by default
+  // reset_btn = $("button#reset_all")[0]
+  // reactive_btn = $("button#reactive_all")[0]
+  delete_btn = $("button#delete_all")[0]
+
+  // reset_btn.style.display = 'none'
+  // reactive_all.style.display = 'none'
+  delete_all.disabled = true
+
+  /**
+  * Autocomplete the "Abbreviate" & "Email Address" when complete enter "Full Name"
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  $("#edit_user_modal #full_name").focusout(function(){
+    full_name = $("#edit_user_modal #full_name ")[0].value
+    $("#edit_user_modal #abbreviation ")[0].value = Users.convert_fullname_to_abbreviation(full_name)
+    $("#edit_user_modal #email_address")[0].value = Users.convert_fullname_to_abbreviation(full_name) + "@elarion.com"
+  })
+
+  $("#new_user_modal #full_name").focusout(function(){
+    full_name = $("#new_user_modal #full_name ")[0].value
+    $("#new_user_modal #abbreviation ")[0].value = Users.convert_fullname_to_abbreviation(full_name)
+    $("#new_user_modal #email_address")[0].value = Users.convert_fullname_to_abbreviation(full_name) + "@elarion.com"
+  })
+
+});
+
+var Users = {
+  /**
+  * Create checkbox for each user in User's Datatable, which content user's id
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {object} [obj] - User object
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  renderCheckbox_all : function(obj) {
+    return "<input type='checkbox' class='user_checkbox' name='list_users[user_id][]' value='" + obj.id + "'>"
+  },
+
+  /**
+  * Create 3 button action for each user is User's Datatable
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {object} [obj] - User object
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  renderAction_all : function(obj) {
+    return  "<a class='btn-action glyphicons refresh btn-default' onclick='Users.reset_user_password(g_token, " + obj.id + ")'> <i></i> </a>" +
+            "&nbsp" + 
+            // "<a class='btn-action glyphicons message_out btn-default' onclick='Users.resend_email(g_token, " + obj.id + ")'> <i></i> </a>" +
+            // "&nbsp" + 
+            "<a class='btn-action glyphicons pencil btn-success' onclick='Users.show_pop_up_edit(this," + obj.id + ");'> <i></i> </a>" +
+            "&nbsp" +
+            "<a class='btn-action glyphicons remove_2 btn-danger' onclick='Users.delete_user(g_token, " + obj.id + ");'> <i></i> </a>"
+  },
+
+  /**
+  * Show pop-up Create New User
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {object} [data] - Object
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  show_pop_up_create : function(data) {
+    CDS.set_modal_position($('#new_user_modal'))
+    inputs = $("#new_user_modal input[type='text']")
+    for(i = 0; i < inputs.length; i++) {
+      inputs[i].value = ''
+    }
+    new_user.resetForm();
+    $('#new_user_modal #modalLabel').html("Create New User")
+    $('#new_user_modal').modal();
+  },
+
+  /**
+  * Show pop-up Edit User
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {Element} [e] - Button edit
+  * @param {Integer} [id] - User's id
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  show_pop_up_edit : function(e, id) {
+    CDS.set_modal_position($('#edit_user_modal'))
+    elements = e.parentNode.parentNode.children
+    $("#edit_user_modal #full_name")[0].value = elements[1].innerText
+    $("#edit_user_modal #abbreviation")[0].value = elements[2].innerText
+    $("#edit_user_modal #email_address")[0].value = elements[3].innerText
+    $("#edit_user_modal #employee_id")[0].value = elements[4].innerText
+    $("#edit_user_modal #user_id")[0].value = id
+
+    $("#edit_user_modal #role option").filter(function() {
+        return $.trim($(this).text()) == elements[4].innerText; 
+    }).attr('selected', true);
+
+    $("#edit_user_modal #status option").filter(function() {
+        return $.trim($(this).text()) == elements[6].innerText; 
+    }).attr('selected', true);
+
+
+    
+    $('#edit_user_modal #modalLabel').html("Edit User " + elements[1].innerText)
+    $('#edit_user_modal').modal();
+  },
+
+  /**
+  * Show pop-up Import User from file .csv
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {object} [data] - Oject
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  show_pop_up_import : function(data) {
+    CDS.set_modal_position($('#import_user_modal'))
+    $('#import_user_modal #modalLabel').html("Select File To Import")
+    $('#import_user_modal').modal();
+  },
+
+  /**
+  * Show pop-up Delete All User
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {token} [token] - Authenticity token to validate
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  show_pop_up_delete_all : function(token) {
+    bootbox.confirm("Are you sure you want to delete the selected users?", function(result) {
+      if (result) {
+        list_users = $("[name='list_users[user_id][]")
+        length = list_users.length
+
+        for (var i = 0; i < length; i++) {
+          item = list_users[i]
+          if (item.checked == true ) {
+            Users.delete_user(token, item.value, "delete_all")
+          }
+        }
+      }
+    });
+  },
+
+  // show_pop_up_reactive_all : function(token) {
+  //   bootbox.confirm("Are you sure you want to resend activation eamil to the selected users?", function(result) {
+  //     if (result) {
+  //       list_users = $("[name='list_users[user_id][]")
+  //       length = list_users.length
+
+  //       for (var i = 0; i < length; i++) {
+  //         item = list_users[i]
+  //         if (item.checked == true ) {
+  //           Users.resend_email(token, item.value, "resend_all")
+  //         }
+  //       }
+  //     }
+  //   });
+  // },
+
+  /**
+  * Show pop-up Reset All Password for user
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {token} [token] - Authenticity token to validate
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  show_pop_up_reset_all : function(token) {
+    bootbox.confirm("Are you sure you want to reset password of the selected users?", function(result) {
+      if (result) {
+        list_users = $("[name='list_users[user_id][]")
+        length = list_users.length
+
+        for (var i = 0; i < length; i++) {
+          item = list_users[i]
+          if (item.checked == true ) {
+            Users.reset_user_password(token, item.value, "reset_all")
+          }
+        }
+      }
+    });
+  },
+
+  /**
+  * Create new user by get value from pop-up Create and call ajax to user controller
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {token} [token] - Authenticity token to validate
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  create_new_user : function(token) {
+    full_name = $("#new_user_modal #full_name")[0].value
+    abbreviation = $("#new_user_modal #abbreviation")[0].value
+    email = $("#new_user_modal #email_address")[0].value
+    emp_id = $("#new_user_modal #employee_id")[0].value
+    role_id = $("#new_user_modal #role")[0].value
+    status = $("#new_user_modal #status")[0].value
+
+    $.ajax({
+      type: "POST",
+      url: g_createUserPath,
+      data: {
+        "full_name": full_name,
+        "abbreviation": abbreviation,
+        "email": email,
+        "employee_id" : emp_id,
+        "group_id": role_id,
+        "status": status,
+        authenticity_token: token},
+      dataType: "json",
+      success: function(data) {
+        $('#new_user_modal').modal('hide');
+        notify_create = notyfy({
+          text: "<b> New user has been created </b>",
+          type: "success"
+        })
+        tb_all.fnDraw();
+      },
+      error: function(data) {
+        string = data.responseJSON
+        result = ""
+        for(key in string) {
+          for(value in string[key]) {
+            result += CDS.capitaliseFirstLetter(key) + " : " + CDS.capitaliseFirstLetter(string[key][0]) +"<br> " 
+          }
+        }
+        notify_create = notyfy({
+          text: "<b> " + result + " </b> ",
+          type: "error"
+        })
+      }
+    });  
+  },
+
+  /**
+  * Edit user by get value from pop-up Edit and call ajax to user controller
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {token} [token] - Authenticity token to validate
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  edit_user : function(token) {
+    user_id = $("#edit_user_modal #user_id")[0].value
+    full_name = $("#edit_user_modal #full_name")[0].value
+    abbreviation = $("#edit_user_modal #abbreviation")[0].value
+    email = $("#edit_user_modal #email_address")[0].value
+    emp_id = $("#edit_user_modal #employee_id")[0].value
+    role_id = $("#edit_user_modal #role")[0].value
+    status = $("#edit_user_modal #status")[0].value
+
+    $.ajax({
+      type: "PUT",
+      url: g_updateUserPath,
+      data: {
+        "user_id": user_id,
+        "full_name": full_name,
+        "abbreviation": abbreviation,
+        "email": email,
+        "employee_id" : emp_id,
+        "group_id": role_id,
+        "status": status,
+        authenticity_token: token},
+      dataType: "json",
+      success: function(data) {
+        $('#edit_user_modal').modal('hide');
+        notify_update = notyfy({
+          text: "<b> The user has been updated </b>",
+          type: "success" 
+        })
+        tb_all.fnDraw();
+      },
+      error: function(data) {
+        string = data.responseJSON
+        result = ""
+        for (key in string) {
+          for (value in string[key]) {
+            result += CDS.capitaliseFirstLetter(key) + " : " + CDS.capitaliseFirstLetter(string[key][0]) +"<br> " 
+          }
+        }
+        notify_create = notyfy({
+          text: "<b> " + result + " </b> ",
+          type: "error"
+        })
+      }
+    });    
+  },
+
+  /**
+  * Delete user who have the id which passed into
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {token} [token] - Authenticity token to validate
+  * @param {integer} [id] - User's id
+  * @param {string} [message] - String to compare which message is shown before delete
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  delete_user : function(token, id, message) {
+    if(message) {
+      $.ajax({
+        type: "DELETE",
+        url: g_destroyUserPath,
+        data: {
+          data: id,
+          authenticity_token: token},
+        success: function(data) {
+          notify_delete = notyfy({
+            text: "The selected users have been delete",
+            type: "success" // alert|error|success|information|warning|primary|confirm
+          })
+          tb_all.fnDraw();
+        },
+        error: function(data) {
+          console.log("data");
+        }
+      });
+    }
+    else {
+      bootbox.confirm("Are you sure you want to delete this user?", function(result) {
+        if(result) {
+          $.ajax({
+            type: "DELETE",
+            url: g_destroyUserPath,
+            data: {
+              data: id,
+              authenticity_token: token},
+            success: function(data) {
+              notify_delete = notyfy({
+                text: "<b> This user has been delete <b>",
+                type: "success"
+              })
+              tb_all.fnDraw();
+            },
+            error: function(data) {
+              console.log("data");
+            }
+          });
+        }
+      });
+    }
+  },
+
+  /**
+  * Reset password of user who have the id which passed into
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {token} [token] - Authenticity token to validate
+  * @param {integer} [id] - User's id
+  * @param {string} [message] - String to compare which message is shown before reset password
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  reset_user_password : function(token, id, message) {
+    if (message) {
+      $.ajax({
+        type: "GET",
+        url: g_resetPassUserPath,
+        data: {
+          data: id,
+          authenticity_token: token},
+        success: function(data) {
+          notify_reset = notyfy({
+            text: "<b> The selected users's password have been reseted <b>",
+            type: "success"
+          })
+          tb_all.fnDraw();
+        },
+        error: function(data) {
+          console.log(data);
+        }
+      });
+    }
+    else {
+      bootbox.confirm("Are you sure you want to reset password of this user?", function(result) {
+        if(result) {
+          $.ajax({
+            type: "GET",
+            url: g_resetPassUserPath,
+            data: {
+              data: id,
+              authenticity_token: token},
+            success: function(data) {
+              notify_reset = notyfy({
+                text: "<b> This user's password has been reseted <b>",
+                type: "success" 
+              })
+              tb_all.fnDraw();
+            },
+            error: function(data) {
+              console.log(data);
+            }
+          });
+        }
+      });
+    }
+  },
+
+  // resend_email : function(token, id, message) {
+  //   if (message) {
+  //     $.ajax({
+  //       type: "GET",
+  //       url: g_resendEmailUserPath,
+  //       data: {
+  //         data: id,
+  //         authenticity_token: token},
+  //       success: function(data) {
+  //         console.log(data)
+  //       },
+  //       error: function(data) {
+  //         console.log(data);
+  //       }
+  //     });
+  //   }
+  //   else {
+  //     bootbox.confirm("Are you sure you want to resend activation email to this user?", function(result) {
+  //       if(result) {
+  //         $.ajax({
+  //           type: "GET",
+  //           url: g_resendEmailUserPath,
+  //           data: {
+  //             data: id,
+  //             authenticity_token: token},
+  //           success: function(data) {
+  //             console.log(data)
+  //           },
+  //           error: function(data) {
+  //             console.log(data);
+  //           }
+  //         });
+  //       }
+  //     });
+  //   }    
+  // },
+
+  /**
+  * Handle when user click checkbox allin User's Datatable
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  check_all_checkbox : function() {
+    checkbox_all = $("#select_all_user")
+    checkboxes = $("[name='list_users[user_id][]']")
+    if (checkbox_all[0].checked == true) {
+      for(i = 0; i< checkboxes.length; i++) {
+        checkboxes[i].checked = true
+      }
+    }else {
+      for(i = 0; i< checkboxes.length; i++) {
+        checkboxes[i].checked = false
+      }
+    }
+  },
+
+  /**
+  * Convert string to the un sign character
+  *
+  * @param {string} [str] - String to convert
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  convert_into_unsign_character : function(str) {
+    str = str.toLowerCase()
+    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a")
+    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e")
+    str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i")
+    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o")
+    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u")
+    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y")
+    str = str.replace(/đ/g, "d")
+    str = str.replace(/0|1|2|3|4|5|6|7|8|9/g, "")
+    str = str.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'| |\"|\&|\#|\[|\]|~|$|_|{|}|/g, "")
+    return str
+  },
+
+  /**
+  * Handle to get the converted string
+  *
+  * @param {string} [full_name] - String to convert
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  convert_fullname_to_abbreviation :function(full_name) {
+    strings = full_name.split(" ")
+    name = Users.convert_into_unsign_character(strings[strings.length-1])
+    l_name = ""
+    for (i = 0; i < strings.length-1; i++) {
+      l_name = l_name + Users.convert_into_unsign_character(strings[i])[0]
+    }
+    return name + l_name   
+  },
+
+
+}

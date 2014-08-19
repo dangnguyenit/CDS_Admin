@@ -1,0 +1,14 @@
+class CreateInstanceComments < ActiveRecord::Migration
+  def change
+    create_table :instance_comments do |t|
+      t.text :comment
+      t.string :term_type
+      t.references :user
+      t.references :instances_term
+
+      t.timestamps
+    end
+    add_index :instance_comments, :user_id
+    add_index :instance_comments, :instances_term_id
+  end
+end

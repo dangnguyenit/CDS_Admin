@@ -1,0 +1,73 @@
+.content.edit-user
+  .widget.widget-heading-simple.widget-body-white
+    .widget-heading
+      %h2
+        = t('users.edit.name')
+    .widget-body
+      - if !@user.errors.messages[:email].blank?
+        %div.error
+          = t('users.new.exist')
+      - if !@user.errors.messages[:email].blank?
+        %div.error
+          = t('users.new.email_exist')
+
+      = form_for(@user, :url => organization_user_path, :html=>{:id=>"edit_user"}) do |f|
+        .form-group
+          .row
+            .col-sm-3
+              %label.control-label{:for => "email"}
+                = t('users.edit.email')
+            .col-sm-9
+              = f.text_field :email, :autofocus => true, class: "form-control"
+
+        .form-group
+          .row
+            .col-sm-3
+              %label.control-label{:for => "first_name"}
+                = t('users.edit.first_name')
+            .col-sm-9
+              = f.text_field :first_name, class: "form-control"
+
+        .form-group
+          .row
+            .col-sm-3
+              %label.control-label{:for => "last_name"}
+                = t('users.edit.last_name')
+            .col-sm-9
+              = f.text_field :last_name, class: "form-control"
+
+        .form-group
+          .row
+            .col-sm-3
+              %label.control-label{:for => "password"}
+                = t('users.new.password')
+                %br
+                = t('users.edit.password_change_info')
+            .col-sm-9
+              = f.password_field :password, class: "form-control"
+
+        .form-group
+          .row
+            .col-sm-3
+              %label.control-label{:for => "password_confirmation"}
+                = t('users.new.password_confirmation')
+            .col-sm-9
+              = f.password_field :password_confirmation, class: "form-control"
+
+        .control-group.center
+          %button#create-user.btn.btn-icon.btn-primary.glyphicons.circle_ok{type: "submit", tabindex: "9"}
+            = t('button.update')
+            %i
+
+          %button.btn.btn-icon.btn-default.glyphicons.circle_remove{type: "button", tabindex: "10", onclick: "window.location = g_usersPath;return false;"}
+            = t('button.cancel')
+            %i
+          / = f.submit t('button.update'),:class=>"btn btn-icon btn-primary glyphicons circle_ok"
+          / = f.button t('button.cancel'),:class=>"btn btn-icon btn-default glyphicons circle_remove",:onclick =>"window.location = g_usersPath;return false;"
+            
+
+
+  = javascript_include_tag "user"
+  :javascript
+    //Default focus
+    $("#user_email").focus();

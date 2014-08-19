@@ -1,0 +1,57 @@
+- if current_user
+  %button.btn.btn-navbar.navbar-toggle.pull-left{:type => "button"}
+    %span.icon-bar
+    %span.icon-bar
+    %span.icon-bar
+
+- if current_user
+  - org_id = (controller.controller_name == 'organizations' && !params[:id] && !params[:organization_id]) ? current_user.organization_id : (params[:organization_id] || params[:id] || current_user.organization_id)
+  
+%a.pull-left{:href => "/"}
+  / %img.logo{:alt => "36x36",  :src => "/assets/Logo_PM_tool.png"}
+
+- if current_user
+  %ul.topnav.pull-left
+   
+    %li.dropdown.dd-1
+      %a.glyphicons.user{"data-toggle" => "dropdown", :href => ""}
+        %i
+        User
+        %span.caret
+
+      = render "layouts/menu_for_user"
+
+    %li
+      - if can? :index, Department
+        %a.glyphicons.group{href: organization_departments_path(org_id) }
+          %i
+          Project
+
+    %li.dropdown.dd-1
+      %a.glyphicons.cogwheel{"data-toggle" => "dropdown", :href => ""}
+        %i
+        Configuration
+        %span.caret
+
+      = render "layouts/menu_for_configuration"
+
+    %li
+      %a.glyphicons.show_thumbnails{"data-toggle" => "dropdown", :href => ""}
+        %i
+        Template
+
+    %li.dropdown.dd-1
+      %a.glyphicons.show_thumbnails{"data-toggle" => "dropdown", :href => ""}
+        %i
+        Assessment
+        %span.caret
+
+      = render "layouts/menu_for_assessment"
+
+    %li.dropdown.dd-1
+      %a.glyphicons.stats{"data-toggle" => "dropdown", :href => ""}
+        %i
+        Statistics
+        %span.caret
+
+      = render "layouts/menu_for_statistic"

@@ -1,0 +1,129 @@
+var tb_permission
+//Set style table
+$(document).ready(function(){
+
+  /**
+  * Initialize datatable content list of terms
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  if($("#permission_table").length > 0) {
+    tb_permission = $("#permission_table").dataTable({
+      "sDom": "<'row separator bottom'<'col-md-12'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
+      "bJQueryUI":true,
+      "bFilter": true,
+      "bLengthChange": false,
+      "bInfo": false,
+      "bProcessing": true,
+      "bServerSide": true,
+      "sPaginationType": "bootstrap",
+      "iDisplayLength": g_displayLength,
+      "aaSorting": [[ 1, "asc" ]],
+      "aoColumns": [
+        { "sTitle": "Name",
+          "mData" : "name"
+        },
+        { "sTitle": "All",
+          "mData" : NewUserGroups.renderCheckbox_All,
+          "bSortable": false,
+        },
+        { "sTitle": "View",
+          "mData" : NewUserGroups.renderCheckbox_View,
+          "bSortable": false,
+        },
+        { "sTitle": "Create",
+          "mData" : NewUserGroups.renderCheckbox_Create,
+          "bSortable": false,
+        },
+        { "sTitle": "Update",
+          "mData" : NewUserGroups.renderCheckbox_Update,
+          "bSortable": false,
+        },
+        { "sTitle": "Delete",
+          "mData" : NewUserGroups.renderCheckbox_Delete,
+          "bSortable": false,
+        },
+      ],
+      "sAjaxSource": g_getAllPermissionPath,
+      "fnInitComplete": function () {
+        CDS.fnInitCompleteCallback(this);
+        $('div.dataTables_filter input').focus();
+      },
+      "fnDrawCallback": function() {
+        $('div.dataTables_filter input').focus();
+       }
+    });
+  }
+
+});
+
+var NewUserGroups = {
+  /**
+  * Create checkbox for each user in User's Datatable, which content user's id
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {object} [obj] - User object
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  renderCheckbox_All : function(obj) {
+    return "<input type='checkbox' class='permission_checkbox_all' name='permission__id' value='" + obj.id + "'>"
+  },
+
+  /**
+  * Create checkbox for each user in User's Datatable, which content user's id
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {object} [obj] - User object
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  renderCheckbox_View : function(obj) {
+    return "<input type='checkbox' class='permission_checkbox_view' name='permission__id' value='" + obj.id + "'>"
+  },
+
+  /**
+  * Create checkbox for each user in User's Datatable, which content user's id
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {object} [obj] - User object
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  renderCheckbox_Create : function(obj) {
+    return "<input type='checkbox' class='permission_checkbox_create' name='permission__id' value='" + obj.id + "'>"
+  },
+
+  /**
+  * Create checkbox for each user in User's Datatable, which content user's id
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {object} [obj] - User object
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  renderCheckbox_Update : function(obj) {
+    return "<input type='checkbox' class='permission_checkbox_update' name='permission__id' value='" + obj.id + "'>"
+  },
+
+  /**
+  * Create checkbox for each user in User's Datatable, which content user's id
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {object} [obj] - User object
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  renderCheckbox_Delete : function(obj) {
+    return "<input type='checkbox' class='permission_checkbox_delete' name='permission__id' value='" + obj.id + "'>"
+  },
+  
+}

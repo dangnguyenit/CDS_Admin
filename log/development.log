@@ -1,0 +1,433 @@
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/opa/Dropbox/CDS_New/config/routes.rb:57)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-13 16:20:23 +0700
+Processing by HomeController#index as HTML
+Redirected to http://localhost:2014/auth/sign_in
+Completed 302 Found in 62ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/sign_in" for 127.0.0.1 at 2014-08-13 16:20:23 +0700
+Processing by SessionsController#new as HTML
+Compiled layout/module.admin.page.form_elements.min.css  (1ms)  (pid 16000)
+Compiled layout/module.admin.page.form_validator.min.css  (0ms)  (pid 16000)
+Compiled layout/module.admin.page.layout.section.layout-fluid-menu-top-full.min.css  (0ms)  (pid 16000)
+Compiled layout/module.admin.page.login.min.css  (1ms)  (pid 16000)
+Compiled layout/module.admin.page.modals.min.css  (1ms)  (pid 16000)
+Compiled layout/module.admin.page.notifications.min.css  (1ms)  (pid 16000)
+Compiled layout/module.admin.page.ratings.min.css  (1ms)  (pid 16000)
+Compiled layout/module.admin.page.tables.min.css  (0ms)  (pid 16000)
+Compiled layout/module.admin.page.ui.min.css  (1ms)  (pid 16000)
+Compiled layout/module.admin.page.widgets.min.css  (1ms)  (pid 16000)
+Compiled plugins/bootstrap-datepicker/bootstrap-datepicker.css  (0ms)  (pid 16000)
+Compiled plugins/bootstrap-fileupload/fileupload.css  (0ms)  (pid 16000)
+Compiled plugins/fontawesome/assets/css/font-awesome.css  (0ms)  (pid 16000)
+Compiled plugins/glyphicons/assets/css/glyphicons_filetypes.css  (0ms)  (pid 16000)
+Compiled plugins/glyphicons/assets/css/glyphicons_regular.css  (0ms)  (pid 16000)
+Compiled plugins/glyphicons/assets/css/glyphicons_social.css  (0ms)  (pid 16000)
+Compiled plugins/jquery-uniform/css/uniform.default.css  (0ms)  (pid 16000)
+Compiled plugins/multiselect/css/multi-select.css  (0ms)  (pid 16000)
+Compiled plugins/notification/jquery.gritter.css  (0ms)  (pid 16000)
+Compiled plugins/notification/jquery.notyfy.css  (0ms)  (pid 16000)
+Compiled plugins/notification/notyfy.theme.default.css  (0ms)  (pid 16000)
+Compiled plugins/pictoicons/css/picto-foundry-arrows.css  (0ms)  (pid 16000)
+Compiled plugins/pictoicons/css/picto-foundry-clothing.css  (0ms)  (pid 16000)
+Compiled plugins/pictoicons/css/picto-foundry-emotions.css  (0ms)  (pid 16000)
+Compiled plugins/pictoicons/css/picto-foundry-food.css  (0ms)  (pid 16000)
+Compiled plugins/pictoicons/css/picto-foundry-general.css  (0ms)  (pid 16000)
+Compiled plugins/pictoicons/css/picto-foundry-household.css  (0ms)  (pid 16000)
+Compiled plugins/pictoicons/css/picto-foundry-medical-science.css  (0ms)  (pid 16000)
+Compiled plugins/pictoicons/css/picto-foundry-multimedia.css  (0ms)  (pid 16000)
+Compiled plugins/pictoicons/css/picto-foundry-nature.css  (0ms)  (pid 16000)
+Compiled plugins/pictoicons/css/picto-foundry-shopping-finance.css  (0ms)  (pid 16000)
+Compiled plugins/pictoicons/css/picto-foundry-sports.css  (0ms)  (pid 16000)
+Compiled plugins/pictoicons/css/picto-foundry-vehicle-navigation.css  (0ms)  (pid 16000)
+Compiled plugins/pictoicons/css/picto-foundry-weather.css  (0ms)  (pid 16000)
+Compiled plugins/pictoicons/css/picto.css  (0ms)  (pid 16000)
+Compiled plugins/select2/select2.css  (0ms)  (pid 16000)
+Compiled boostraps/boostraps/bootstrap.css  (0ms)  (pid 16000)
+Compiled boostraps/bootstrap-select/bootstrap-select.css  (0ms)  (pid 16000)
+Compiled boostraps/bootstrap-wysihtml5-0.0.2.css  (0ms)  (pid 16000)
+Compiled jMenu.css  (0ms)  (pid 16000)
+Compiled customize.css  (0ms)  (pid 16000)
+Compiled fix_font_end.css  (0ms)  (pid 16000)
+Compiled application.css  (1056ms)  (pid 16000)
+Compiled jquery.js  (1ms)  (pid 16000)
+Compiled jquery_ujs.js  (0ms)  (pid 16000)
+Compiled jquery.ui.core.js  (0ms)  (pid 16000)
+Compiled jquery.ui.widget.js  (0ms)  (pid 16000)
+Compiled jquery.ui.accordion.js  (62ms)  (pid 16000)
+Compiled jquery.ui.position.js  (0ms)  (pid 16000)
+Compiled jquery.ui.menu.js  (7ms)  (pid 16000)
+Compiled jquery.ui.autocomplete.js  (37ms)  (pid 16000)
+Compiled jquery.ui.button.js  (2ms)  (pid 16000)
+Compiled jquery.ui.datepicker.js  (1ms)  (pid 16000)
+Compiled jquery.ui.mouse.js  (2ms)  (pid 16000)
+Compiled jquery.ui.draggable.js  (23ms)  (pid 16000)
+Compiled jquery.ui.resizable.js  (3ms)  (pid 16000)
+Compiled jquery.ui.dialog.js  (106ms)  (pid 16000)
+Compiled jquery.ui.droppable.js  (4ms)  (pid 16000)
+Compiled jquery.ui.effect.js  (0ms)  (pid 16000)
+Compiled jquery.ui.effect-blind.js  (38ms)  (pid 16000)
+Compiled jquery.ui.effect-bounce.js  (1ms)  (pid 16000)
+Compiled jquery.ui.effect-clip.js  (1ms)  (pid 16000)
+Compiled jquery.ui.effect-drop.js  (2ms)  (pid 16000)
+Compiled jquery.ui.effect-explode.js  (1ms)  (pid 16000)
+Compiled jquery.ui.effect-fade.js  (1ms)  (pid 16000)
+Compiled jquery.ui.effect-fold.js  (1ms)  (pid 16000)
+Compiled jquery.ui.effect-highlight.js  (2ms)  (pid 16000)
+Compiled jquery.ui.effect-pulsate.js  (2ms)  (pid 16000)
+Compiled jquery.ui.effect-scale.js  (3ms)  (pid 16000)
+Compiled jquery.ui.effect-shake.js  (1ms)  (pid 16000)
+Compiled jquery.ui.effect-slide.js  (1ms)  (pid 16000)
+Compiled jquery.ui.effect-transfer.js  (1ms)  (pid 16000)
+Compiled jquery.ui.progressbar.js  (3ms)  (pid 16000)
+Compiled jquery.ui.selectable.js  (4ms)  (pid 16000)
+Compiled jquery.ui.slider.js  (5ms)  (pid 16000)
+Compiled jquery.ui.sortable.js  (3ms)  (pid 16000)
+Compiled jquery.ui.spinner.js  (4ms)  (pid 16000)
+Compiled jquery.ui.tabs.js  (4ms)  (pid 16000)
+Compiled jquery.ui.tooltip.js  (2ms)  (pid 16000)
+Compiled jquery.ui.all.js  (781ms)  (pid 16000)
+Compiled lib/jquery/jquery-migrate.min.js  (0ms)  (pid 16000)
+Compiled lib/jquery/jquery.min.js  (0ms)  (pid 16000)
+Compiled lib/modernizr/modernizr.js  (0ms)  (pid 16000)
+Compiled lib/less-js/less.min.js  (0ms)  (pid 16000)
+Compiled lib/flot/excanvas.js  (0ms)  (pid 16000)
+Compiled lib/ie/ie.prototype.polyfill.js  (0ms)  (pid 16000)
+Compiled lib/jquery-ui/js/jquery-ui.min.js  (45ms)  (pid 16000)
+Compiled lib/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js  (0ms)  (pid 16000)
+Compiled lib/slimscroll/jquery.slimscroll.js  (0ms)  (pid 16000)
+Compiled lib/breakpoints/breakpoints.js  (0ms)  (pid 16000)
+Compiled lib/notification/jquery.notyfy.js  (0ms)  (pid 16000)
+Compiled lib/notification/notyfy.init.js  (0ms)  (pid 16000)
+Compiled lib/select2/select2.init.js  (0ms)  (pid 16000)
+Compiled lib/select2/select2.js  (2ms)  (pid 16000)
+Compiled lib/mutilselect/jquery.multi-select.js  (0ms)  (pid 16000)
+Compiled lib/mutilselect/multiselect.init.js  (0ms)  (pid 16000)
+Compiled lib/modals/bootbox.min.js  (0ms)  (pid 16000)
+Compiled lib/modals/modals.init.js  (0ms)  (pid 16000)
+Compiled lib/boostraps/bootstrap.js  (0ms)  (pid 16000)
+Compiled lib/tables/1_ZeroClipboard.js  (0ms)  (pid 16000)
+Compiled lib/tables/1_jquery.dataTables.min.js  (0ms)  (pid 16000)
+Compiled lib/tables/2_TableTools.js  (44ms)  (pid 16000)
+Compiled lib/tables/3_ColVis.js  (0ms)  (pid 16000)
+Compiled lib/tables/4_DT_bootstrap.js  (0ms)  (pid 16000)
+Compiled lib/tables/5_ZeroClipboard.js  (0ms)  (pid 16000)
+Compiled lib/tables/6_datatables.init.js  (0ms)  (pid 16000)
+Compiled lib/boostraps-select/1_bootstrap-select.js  (0ms)  (pid 16000)
+Compiled lib/boostraps-select/2_bootstrap-select.init.js  (0ms)  (pid 16000)
+Compiled lib/fuelux-checkbox/fuelux-checkbox.js  (0ms)  (pid 16000)
+Compiled lib/boostrap-datepicker/1_bootstrap-datepicker.js  (0ms)  (pid 16000)
+Compiled lib/boostrap-datepicker/2_bootstrap-datepicker.init.js  (0ms)  (pid 16000)
+Compiled lib/jquery-validator/1_jquery.validate.js  (0ms)  (pid 16000)
+Compiled lib/jquery-validator/2_form-validator.init.js  (0ms)  (pid 16000)
+Compiled lib/core/core.init.js  (0ms)  (pid 16000)
+Compiled i18n.js  (0ms)  (pid 16000)
+Compiled i18n/translations.js  (29ms)  (pid 16000)
+Compiled jMenu.js  (0ms)  (pid 16000)
+Compiled jquery.validate.js  (1ms)  (pid 16000)
+Compiled common_functions.js  (4ms)  (pid 16000)
+Compiled application.js  (1491ms)  (pid 16000)
+  [1m[36mUser Load (36.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+Compiled user.js  (15ms)  (pid 16000)
+  Rendered devise/sessions/new.html.haml (2946.6ms)
+Completed 200 OK in 3714ms (Views: 3136.0ms | ActiveRecord: 538.2ms)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/opa/Dropbox/CDS_New/config/routes.rb:57)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2014-08-13 16:22:43 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7Z9KpldaDoQP5rP7/DZFjliKEM+1+HvQZCs1B8Htg5w=", "user"=>{"email"=>"admin@elarion.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@elarion.com' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (17.9ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE ("users"."staff_number" = 32767 AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (29.3ms)[0m  SELECT 1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('admin@elarion.com') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (29.5ms)[0m  [1mUPDATE "users" SET "cached_failed_attempts" = 1, "failed_attempts" = 1, "updated_at" = '2014-08-13 09:22:44.334725' WHERE "users"."id" = 1[0m
+  [1m[35m (18.8ms)[0m  COMMIT
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@elarion.com' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mUPDATE "users" SET "failed_attempts" = 0, "updated_at" = '2014-08-13 09:22:44.482742' WHERE "users"."id" = 1[0m
+  [1m[35m (15.0ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.8ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2014-08-13 09:22:44.499543', "current_sign_in_at" = '2014-08-13 09:22:44.499543', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-08-13 09:22:44.500383' WHERE "users"."id" = 1
+  [1m[36mSQL (96.0ms)[0m  [1mINSERT INTO "activities" ("created_at", "deleted_name", "key", "organization_id", "owner_id", "owner_type", "parameters", "recipient_id", "recipient_type", "trackable_id", "trackable_type", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["created_at", Wed, 13 Aug 2014 09:22:44 UTC +00:00], ["deleted_name", nil], ["key", "user.login"], ["organization_id", 1], ["owner_id", 1], ["owner_type", "User"], ["parameters", "---\n:detail: Logged in to system\n"], ["recipient_id", nil], ["recipient_type", nil], ["trackable_id", 1], ["trackable_type", "User"], ["updated_at", Wed, 13 Aug 2014 09:22:44 UTC +00:00]]
+  [1m[35m (16.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 AS one FROM "users" WHERE ("users"."staff_number" = 32767 AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('admin@elarion.com') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  UPDATE "users" SET "cached_failed_attempts" = 0, "updated_at" = '2014-08-13 09:22:44.810973' WHERE "users"."id" = 1
+  [1m[36m (10.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mOrganization Load (29.8ms)[0m  SELECT "organizations".* FROM "organizations" WHERE "organizations"."id" = 1 LIMIT 1
+Redirected to http://localhost:2014/organizations/1/departments
+Completed 302 Found in 855ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/organizations/1/departments" for 127.0.0.1 at 2014-08-13 16:22:44 +0700
+Processing by DepartmentsController#index as HTML
+  Parameters: {"organization_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mOrganization Load (0.3ms)[0m  SELECT "organizations".* FROM "organizations" WHERE "organizations"."id" = 1 LIMIT 1
+Compiled views/departments/departments.js  (12ms)  (pid 16448)
+  Rendered departments/index.html.haml within layouts/application (36.1ms)
+Compiled i18n/translations.js  (0ms)  (pid 16448)
+Compiled application.js  (17ms)  (pid 16448)
+  Rendered layouts/_menu_for_user.html.haml (32.1ms)
+  Rendered layouts/_menu_for_configuration.html.haml (20.0ms)
+  Rendered layouts/_menu_for_assessment.html.haml (27.1ms)
+  Rendered layouts/_menu_for_statistic.html.haml (5.4ms)
+  Rendered layouts/_menu_top_left.html.haml (122.8ms)
+  Rendered layouts/_menu_top_right.html.haml (6.0ms)
+Completed 200 OK in 574ms (Views: 555.4ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/auth/sign_out" for 127.0.0.1 at 2014-08-13 16:23:35 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7Z9KpldaDoQP5rP7/DZFjliKEM+1+HvQZCs1B8Htg5w="}
+WARNING: Can't verify CSRF token authenticity
+Redirected to http://localhost:2014/auth/sign_in
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/sign_in" for 127.0.0.1 at 2014-08-13 16:23:35 +0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  Rendered devise/sessions/new.html.haml (123.6ms)
+Completed 200 OK in 128ms (Views: 124.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2014-08-13 16:23:45 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EztkWXJIBFXmfNIOMoag+0nHgqKdexGD+R1NZiZ0tqU=", "user"=>{"email"=>"dangnh@elarion.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'dangnh@elarion.com' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'dangnh@elarion.com' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms
+Processing by SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EztkWXJIBFXmfNIOMoag+0nHgqKdexGD+R1NZiZ0tqU=", "user"=>{"email"=>"dangnh@elarion.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'dangnh@elarion.com' LIMIT 1
+  Rendered devise/sessions/new.html.haml (73.1ms)
+Completed 200 OK in 145ms (Views: 74.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/sign_in" for 127.0.0.1 at 2014-08-13 16:26:05 +0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  Rendered devise/sessions/new.html.haml (44.9ms)
+Completed 200 OK in 49ms (Views: 46.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/auth/sign_in" for 127.0.0.1 at 2014-08-13 16:26:38 +0700
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  Rendered devise/sessions/new.html.haml (74.7ms)
+Completed 200 OK in 77ms (Views: 75.3ms | ActiveRecord: 0.8ms)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/opa/Dropbox/CDS_New/config/routes.rb:57)
+
+
+Started GET "/auth/sign_in" for 127.0.0.1 at 2014-08-13 16:30:09 +0700
+Processing by SessionsController#new as HTML
+Compiled layout/module.admin.page.form_elements.min.css  (28ms)  (pid 17255)
+Compiled layout/module.admin.page.form_validator.min.css  (0ms)  (pid 17255)
+Compiled layout/module.admin.page.layout.section.layout-fluid-menu-top-full.min.css  (0ms)  (pid 17255)
+Compiled layout/module.admin.page.login.min.css  (29ms)  (pid 17255)
+Compiled layout/module.admin.page.modals.min.css  (0ms)  (pid 17255)
+Compiled layout/module.admin.page.notifications.min.css  (0ms)  (pid 17255)
+Compiled layout/module.admin.page.ratings.min.css  (0ms)  (pid 17255)
+Compiled layout/module.admin.page.tables.min.css  (0ms)  (pid 17255)
+Compiled layout/module.admin.page.ui.min.css  (27ms)  (pid 17255)
+Compiled layout/module.admin.page.widgets.min.css  (0ms)  (pid 17255)
+Compiled plugins/bootstrap-datepicker/bootstrap-datepicker.css  (0ms)  (pid 17255)
+Compiled plugins/bootstrap-fileupload/fileupload.css  (0ms)  (pid 17255)
+Compiled plugins/fontawesome/assets/css/font-awesome.css  (0ms)  (pid 17255)
+Compiled plugins/glyphicons/assets/css/glyphicons_filetypes.css  (0ms)  (pid 17255)
+Compiled plugins/glyphicons/assets/css/glyphicons_regular.css  (0ms)  (pid 17255)
+Compiled plugins/glyphicons/assets/css/glyphicons_social.css  (0ms)  (pid 17255)
+Compiled plugins/jquery-uniform/css/uniform.default.css  (0ms)  (pid 17255)
+Compiled plugins/multiselect/css/multi-select.css  (0ms)  (pid 17255)
+Compiled plugins/notification/jquery.gritter.css  (0ms)  (pid 17255)
+Compiled plugins/notification/jquery.notyfy.css  (0ms)  (pid 17255)
+Compiled plugins/notification/notyfy.theme.default.css  (0ms)  (pid 17255)
+Compiled plugins/pictoicons/css/picto-foundry-arrows.css  (0ms)  (pid 17255)
+Compiled plugins/pictoicons/css/picto-foundry-clothing.css  (0ms)  (pid 17255)
+Compiled plugins/pictoicons/css/picto-foundry-emotions.css  (0ms)  (pid 17255)
+Compiled plugins/pictoicons/css/picto-foundry-food.css  (0ms)  (pid 17255)
+Compiled plugins/pictoicons/css/picto-foundry-general.css  (0ms)  (pid 17255)
+Compiled plugins/pictoicons/css/picto-foundry-household.css  (0ms)  (pid 17255)
+Compiled plugins/pictoicons/css/picto-foundry-medical-science.css  (0ms)  (pid 17255)
+Compiled plugins/pictoicons/css/picto-foundry-multimedia.css  (0ms)  (pid 17255)
+Compiled plugins/pictoicons/css/picto-foundry-nature.css  (0ms)  (pid 17255)
+Compiled plugins/pictoicons/css/picto-foundry-shopping-finance.css  (0ms)  (pid 17255)
+Compiled plugins/pictoicons/css/picto-foundry-sports.css  (0ms)  (pid 17255)
+Compiled plugins/pictoicons/css/picto-foundry-vehicle-navigation.css  (0ms)  (pid 17255)
+Compiled plugins/pictoicons/css/picto-foundry-weather.css  (0ms)  (pid 17255)
+Compiled plugins/pictoicons/css/picto.css  (0ms)  (pid 17255)
+Compiled plugins/select2/select2.css  (0ms)  (pid 17255)
+Compiled boostraps/boostraps/bootstrap.css  (0ms)  (pid 17255)
+Compiled boostraps/bootstrap-select/bootstrap-select.css  (0ms)  (pid 17255)
+Compiled boostraps/bootstrap-wysihtml5-0.0.2.css  (0ms)  (pid 17255)
+Compiled jMenu.css  (0ms)  (pid 17255)
+Compiled customize.css  (0ms)  (pid 17255)
+Compiled fix_font_end.css  (0ms)  (pid 17255)
+Compiled application.css  (560ms)  (pid 17255)
+Compiled jquery.js  (1ms)  (pid 17255)
+Compiled jquery_ujs.js  (0ms)  (pid 17255)
+Compiled jquery.ui.core.js  (0ms)  (pid 17255)
+Compiled jquery.ui.widget.js  (0ms)  (pid 17255)
+Compiled jquery.ui.accordion.js  (44ms)  (pid 17255)
+Compiled jquery.ui.position.js  (0ms)  (pid 17255)
+Compiled jquery.ui.menu.js  (6ms)  (pid 17255)
+Compiled jquery.ui.autocomplete.js  (15ms)  (pid 17255)
+Compiled jquery.ui.button.js  (2ms)  (pid 17255)
+Compiled jquery.ui.datepicker.js  (32ms)  (pid 17255)
+Compiled jquery.ui.mouse.js  (2ms)  (pid 17255)
+Compiled jquery.ui.draggable.js  (7ms)  (pid 17255)
+Compiled jquery.ui.resizable.js  (3ms)  (pid 17255)
+Compiled jquery.ui.dialog.js  (27ms)  (pid 17255)
+Compiled jquery.ui.droppable.js  (3ms)  (pid 17255)
+Compiled jquery.ui.effect.js  (0ms)  (pid 17255)
+Compiled jquery.ui.effect-blind.js  (6ms)  (pid 17255)
+Compiled jquery.ui.effect-bounce.js  (2ms)  (pid 17255)
+Compiled jquery.ui.effect-clip.js  (1ms)  (pid 17255)
+Compiled jquery.ui.effect-drop.js  (1ms)  (pid 17255)
+Compiled jquery.ui.effect-explode.js  (1ms)  (pid 17255)
+Compiled jquery.ui.effect-fade.js  (1ms)  (pid 17255)
+Compiled jquery.ui.effect-fold.js  (1ms)  (pid 17255)
+Compiled jquery.ui.effect-highlight.js  (1ms)  (pid 17255)
+Compiled jquery.ui.effect-pulsate.js  (1ms)  (pid 17255)
+Compiled jquery.ui.effect-scale.js  (1ms)  (pid 17255)
+Compiled jquery.ui.effect-shake.js  (1ms)  (pid 17255)
+Compiled jquery.ui.effect-slide.js  (1ms)  (pid 17255)
+Compiled jquery.ui.effect-transfer.js  (1ms)  (pid 17255)
+Compiled jquery.ui.progressbar.js  (2ms)  (pid 17255)
+Compiled jquery.ui.selectable.js  (3ms)  (pid 17255)
+Compiled jquery.ui.slider.js  (3ms)  (pid 17255)
+Compiled jquery.ui.sortable.js  (3ms)  (pid 17255)
+Compiled jquery.ui.spinner.js  (3ms)  (pid 17255)
+Compiled jquery.ui.tabs.js  (2ms)  (pid 17255)
+Compiled jquery.ui.tooltip.js  (2ms)  (pid 17255)
+Compiled jquery.ui.all.js  (434ms)  (pid 17255)
+Compiled lib/jquery/jquery-migrate.min.js  (0ms)  (pid 17255)
+Compiled lib/jquery/jquery.min.js  (0ms)  (pid 17255)
+Compiled lib/modernizr/modernizr.js  (0ms)  (pid 17255)
+Compiled lib/less-js/less.min.js  (0ms)  (pid 17255)
+Compiled lib/flot/excanvas.js  (0ms)  (pid 17255)
+Compiled lib/ie/ie.prototype.polyfill.js  (0ms)  (pid 17255)
+Compiled lib/jquery-ui/js/jquery-ui.min.js  (1ms)  (pid 17255)
+Compiled lib/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js  (0ms)  (pid 17255)
+Compiled lib/slimscroll/jquery.slimscroll.js  (0ms)  (pid 17255)
+Compiled lib/breakpoints/breakpoints.js  (0ms)  (pid 17255)
+Compiled lib/notification/jquery.notyfy.js  (0ms)  (pid 17255)
+Compiled lib/notification/notyfy.init.js  (0ms)  (pid 17255)
+Compiled lib/select2/select2.init.js  (0ms)  (pid 17255)
+Compiled lib/select2/select2.js  (1ms)  (pid 17255)
+Compiled lib/mutilselect/jquery.multi-select.js  (0ms)  (pid 17255)
+Compiled lib/mutilselect/multiselect.init.js  (0ms)  (pid 17255)
+Compiled lib/modals/bootbox.min.js  (0ms)  (pid 17255)
+Compiled lib/modals/modals.init.js  (0ms)  (pid 17255)
+Compiled lib/boostraps/bootstrap.js  (0ms)  (pid 17255)
+Compiled lib/tables/1_ZeroClipboard.js  (0ms)  (pid 17255)
+Compiled lib/tables/1_jquery.dataTables.min.js  (0ms)  (pid 17255)
+Compiled lib/tables/2_TableTools.js  (0ms)  (pid 17255)
+Compiled lib/tables/3_ColVis.js  (0ms)  (pid 17255)
+Compiled lib/tables/4_DT_bootstrap.js  (0ms)  (pid 17255)
+Compiled lib/tables/5_ZeroClipboard.js  (30ms)  (pid 17255)
+Compiled lib/tables/6_datatables.init.js  (0ms)  (pid 17255)
+Compiled lib/boostraps-select/1_bootstrap-select.js  (0ms)  (pid 17255)
+Compiled lib/boostraps-select/2_bootstrap-select.init.js  (0ms)  (pid 17255)
+Compiled lib/fuelux-checkbox/fuelux-checkbox.js  (0ms)  (pid 17255)
+Compiled lib/boostrap-datepicker/1_bootstrap-datepicker.js  (0ms)  (pid 17255)
+Compiled lib/boostrap-datepicker/2_bootstrap-datepicker.init.js  (0ms)  (pid 17255)
+Compiled lib/jquery-validator/1_jquery.validate.js  (0ms)  (pid 17255)
+Compiled lib/jquery-validator/2_form-validator.init.js  (0ms)  (pid 17255)
+Compiled lib/core/core.init.js  (0ms)  (pid 17255)
+Compiled i18n.js  (0ms)  (pid 17255)
+Compiled i18n/translations.js  (1ms)  (pid 17255)
+Compiled jMenu.js  (0ms)  (pid 17255)
+Compiled jquery.validate.js  (0ms)  (pid 17255)
+Compiled common_functions.js  (5ms)  (pid 17255)
+Compiled application.js  (821ms)  (pid 17255)
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+Compiled user.js  (13ms)  (pid 17255)
+  Rendered devise/sessions/new.html.haml (1629.2ms)
+Completed 200 OK in 1744ms (Views: 1692.0ms | ActiveRecord: 12.7ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2014-08-13 16:30:17 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qAkGpimRsRgxBz6kLrHqwebKkKPdWqMi44jGOoiuDPo=", "user"=>{"email"=>"admin@elarion.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'admin@elarion.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT 1 AS one FROM "users" WHERE ("users"."staff_number" = 32767 AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('admin@elarion.com') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  UPDATE "users" SET "cached_failed_attempts" = 1, "failed_attempts" = 1, "updated_at" = '2014-08-13 09:30:18.022265' WHERE "users"."id" = 1
+  [1m[36m (10.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'admin@elarion.com' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  UPDATE "users" SET "failed_attempts" = 0, "updated_at" = '2014-08-13 09:30:18.116154' WHERE "users"."id" = 1
+  [1m[36m (12.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2014-08-13 09:30:18.131740', "sign_in_count" = 2, "updated_at" = '2014-08-13 09:30:18.132620' WHERE "users"."id" = 1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "activities" ("created_at", "deleted_name", "key", "organization_id", "owner_id", "owner_type", "parameters", "recipient_id", "recipient_type", "trackable_id", "trackable_type", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"  [["created_at", Wed, 13 Aug 2014 09:30:18 UTC +00:00], ["deleted_name", nil], ["key", "user.login"], ["organization_id", 1], ["owner_id", 1], ["owner_type", "User"], ["parameters", "---\n:detail: Logged in to system\n"], ["recipient_id", nil], ["recipient_type", nil], ["trackable_id", 1], ["trackable_type", "User"], ["updated_at", Wed, 13 Aug 2014 09:30:18 UTC +00:00]]
+  [1m[36m (7.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE ("users"."staff_number" = 32767 AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('admin@elarion.com') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mUPDATE "users" SET "cached_failed_attempts" = 0, "updated_at" = '2014-08-13 09:30:18.264633' WHERE "users"."id" = 1[0m
+  [1m[35m (14.6ms)[0m  COMMIT
+  [1m[36mOrganization Load (0.6ms)[0m  [1mSELECT "organizations".* FROM "organizations" WHERE "organizations"."id" = 1 LIMIT 1[0m
+Redirected to http://localhost:2014/organizations/1/departments
+Completed 302 Found in 352ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/organizations/1/departments" for 127.0.0.1 at 2014-08-13 16:30:18 +0700
+Processing by DepartmentsController#index as HTML
+  Parameters: {"organization_id"=>"1"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mOrganization Load (0.3ms)[0m  [1mSELECT "organizations".* FROM "organizations" WHERE "organizations"."id" = 1 LIMIT 1[0m
+Compiled views/departments/departments.js  (11ms)  (pid 17255)
+  Rendered departments/index.html.haml within layouts/application (22.7ms)
+  Rendered layouts/_menu_for_user.html.haml (50.4ms)
+  Rendered layouts/_menu_for_configuration.html.haml (6.7ms)
+  Rendered layouts/_menu_for_assessment.html.haml (12.9ms)
+  Rendered layouts/_menu_for_statistic.html.haml (2.6ms)
+  Rendered layouts/_menu_top_left.html.haml (81.1ms)
+  Rendered layouts/_menu_top_right.html.haml (5.1ms)
+Completed 200 OK in 160ms (Views: 149.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/organizations/1/departments?sEcho=1&iColumns=8&sColumns=&iDisplayStart=0&iDisplayLength=20&mDataProp_0=function&mDataProp_1=name&mDataProp_2=description&mDataProp_3=template&mDataProp_4=manager&mDataProp_5=date_created&mDataProp_6=status&mDataProp_7=function&sSearch=&bRegex=false&sSearch_0=&bRegex_0=false&bSearchable_0=true&sSearch_1=&bRegex_1=false&bSearchable_1=true&sSearch_2=&bRegex_2=false&bSearchable_2=true&sSearch_3=&bRegex_3=false&bSearchable_3=true&sSearch_4=&bRegex_4=false&bSearchable_4=true&sSearch_5=&bRegex_5=false&bSearchable_5=true&sSearch_6=&bRegex_6=false&bSearchable_6=true&sSearch_7=&bRegex_7=false&bSearchable_7=true&iSortCol_0=1&sSortDir_0=asc&iSortingCols=1&bSortable_0=false&bSortable_1=true&bSortable_2=true&bSortable_3=true&bSortable_4=true&bSortable_5=true&bSortable_6=true&bSortable_7=false&_=1407922219419" for 127.0.0.1 at 2014-08-13 16:30:19 +0700
+Processing by DepartmentsController#index as JSON
+  Parameters: {"sEcho"=>"1", "iColumns"=>"8", "sColumns"=>"", "iDisplayStart"=>"0", "iDisplayLength"=>"20", "mDataProp_0"=>"function", "mDataProp_1"=>"name", "mDataProp_2"=>"description", "mDataProp_3"=>"template", "mDataProp_4"=>"manager", "mDataProp_5"=>"date_created", "mDataProp_6"=>"status", "mDataProp_7"=>"function", "sSearch"=>"", "bRegex"=>"false", "sSearch_0"=>"", "bRegex_0"=>"false", "bSearchable_0"=>"true", "sSearch_1"=>"", "bRegex_1"=>"false", "bSearchable_1"=>"true", "sSearch_2"=>"", "bRegex_2"=>"false", "bSearchable_2"=>"true", "sSearch_3"=>"", "bRegex_3"=>"false", "bSearchable_3"=>"true", "sSearch_4"=>"", "bRegex_4"=>"false", "bSearchable_4"=>"true", "sSearch_5"=>"", "bRegex_5"=>"false", "bSearchable_5"=>"true", "sSearch_6"=>"", "bRegex_6"=>"false", "bSearchable_6"=>"true", "sSearch_7"=>"", "bRegex_7"=>"false", "bSearchable_7"=>"true", "iSortCol_0"=>"1", "sSortDir_0"=>"asc", "iSortingCols"=>"1", "bSortable_0"=>"false", "bSortable_1"=>"true", "bSortable_2"=>"true", "bSortable_3"=>"true", "bSortable_4"=>"true", "bSortable_5"=>"true", "bSortable_6"=>"true", "bSortable_7"=>"false", "_"=>"1407922219419", "organization_id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mOrganization Load (0.9ms)[0m  [1mSELECT "organizations".* FROM "organizations" WHERE "organizations"."id" = 1 LIMIT 1[0m
+  [1m[35m (23.4ms)[0m  SELECT COUNT(*) FROM "departments" WHERE (lower(departments.name) like '%%')
+  [1m[36mDepartment Load (1.5ms)[0m  [1mSELECT "departments".* FROM "departments" WHERE (lower(departments.name) like '%%') ORDER BY name asc LIMIT 20 OFFSET 0[0m
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCdsTemplate Load (29.0ms)[0m  [1mSELECT "cds_templates".* FROM "cds_templates" WHERE "cds_templates"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cds_templates".* FROM "cds_templates" WHERE "cds_templates"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cds_templates".* FROM "cds_templates" WHERE "cds_templates"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 134ms (Views: 0.6ms | ActiveRecord: 73.9ms)
+
+
+Started DELETE "/auth/sign_out" for 127.0.0.1 at 2014-08-13 16:32:20 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qAkGpimRsRgxBz6kLrHqwebKkKPdWqMi44jGOoiuDPo="}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:2014/auth/sign_in
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/auth/sign_in" for 127.0.0.1 at 2014-08-13 16:32:20 +0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  Rendered devise/sessions/new.html.haml (33.1ms)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.5ms)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/opa/Dropbox/CDS_New/config/routes.rb:57)

@@ -1,0 +1,10 @@
+class AddColumnsToUsers < ActiveRecord::Migration
+  def change
+    add_column :users, :is_bod, :boolean
+    add_column :users, :is_hr, :boolean
+    add_column :users, :career_path, :string
+    add_column :users, :staff_number, :integer
+    add_column :users, :team_leader_id, :integer
+    add_index :users, :staff_number
+  end
+end

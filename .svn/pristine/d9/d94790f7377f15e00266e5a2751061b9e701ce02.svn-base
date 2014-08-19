@@ -1,0 +1,121 @@
+var tb_user_group
+//Set style table
+$(document).ready(function(){
+  /**
+  * Initialize datatable content list of terms
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  if($("#user_group_table").length > 0) {
+
+    tb_user_group = $("#user_group_table").dataTable({
+      "sDom": "<'row separator bottom'<'col-md-12'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
+      "bJQueryUI":true,
+      "bFilter": true,
+      "bLengthChange": false,
+      "bInfo": false,
+      "bProcessing": false,
+      "bServerSide": true,
+      "sPaginationType": "bootstrap",
+      "iDisplayLength": g_displayLength,
+      "aaSorting": [[ 1, "asc" ]],
+      "aoColumns": [
+        { "sTitle": "<input type='checkbox' class='user_group_checkbox' id='select_all_user_group'>",
+          "sClass": "center",
+          "sWidth": "1%",
+          "bSortable": false,
+          "mData" : UserGroups.renderCheckbox
+        },
+        { "sTitle": "Name",
+          "mData" : "name"
+        },
+        { "sTitle": "Description",
+          "mData" : "description"
+        },
+        { "sTitle": "Status",
+          "mData" : "status",
+        },
+        { "sTitle": "Date Created",
+          "mData" : "date_created",
+        },
+        { "sTitle": "Action",
+          "bSortable": false,
+          "sWidth": "10%",
+          "mData" : UserGroups.renderAction_all,
+        }
+      ],
+      "sAjaxSource": "#{user_groups_path}",
+      "fnInitComplete": function () {
+        CDS.fnInitCompleteCallback(this);
+        $('div.dataTables_filter input').focus();
+      },
+      "fnDrawCallback": function() {
+        $('div.dataTables_filter input').focus();
+      }
+    });
+  }
+
+
+});
+
+var UserGroups = {
+  /**
+  * Create checkbox for each user in User's Datatable, which content user's id
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {object} [obj] - User object
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  renderCheckbox : function(obj) {
+    return "<input type='checkbox' class='user_group_checkbox' name='user_group_id' value='" + obj.id + "'>"
+  },
+  
+  /**
+  * Create 3 button action for each user is User's Datatable
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {object} [obj] - User object
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  renderAction_all : function(obj) {
+    return  "<a class='btn-action glyphicons pencil btn-success' onclick='UserRelationships.show_pop_up_edit(this," + obj.id + ", " + obj.id + ")'> <i></i> </a>" +
+            "&nbsp" +
+            "<a class='btn-action glyphicons remove_2 btn-danger' onclick='UserRelationships.remove_manager_for_user(" + obj.id + ", g_token)'> <i></i> </a>"
+  },
+
+  /**
+  * Show pop-up Create New User Relationship
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {object} [data] - Object
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  show_pop_up_create : function() {
+    CDS.set_modal_position($('#new_user_group_modal'))
+    $('#new_user_group_modal #modalLabel').html("Create Role")
+    $("#new_user_group_modal #name")[0].value = ''
+    $('#new_user_group_modal').modal();
+  },
+
+  /**
+  * Show pop-up Create New User Relationship
+  *
+  * @author DangNH <dangnh@elarion.com>
+  * @param {object} [data] - Object
+  * @returns None
+  * @deprecated since version 2.0
+  * @todo improve this function.
+  */
+  show_pop_up_delete : function() {
+
+  },
+}
